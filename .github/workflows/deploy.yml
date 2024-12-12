@@ -28,7 +28,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: site
-          path: ./build # Ange sökvägen till byggresultaten
+          path: ./build # Kontrollera att detta är rätt sökväg till byggresultaten
 
   deploy:
     runs-on: ubuntu-latest
@@ -42,3 +42,5 @@ jobs:
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v1
+        with:
+          artifact: site
