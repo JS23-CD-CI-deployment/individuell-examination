@@ -28,31 +28,26 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: site
-          path: ./build # Kontrollera att detta är rätt sökväg till byggresultaten
+          path: build # Kontrollera att './build' är rätt sökväg till byggfilerna
 
   deploy:
     runs-on: ubuntu-latest
+    needs: build
     permissions:
       contents: read
       pages: write
       id-token: write
 
     steps:
-      - uses: actions/checkout@v4
-      - name: Install modules
-        run: npm install
-
-      - name: Build dist
-        run: npm run build
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: site
 
       - name: Setup pages
         uses: actions/configure-pages@v3
 
-      - name: Upload dist folder
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: "./dist"
-
-      - name: Deploy to Github Pages
-        id: deployment
+      - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v1
+        with:
+          artifact: site
