@@ -23,6 +23,9 @@ jobs:
 
       - name: Build project
         run: npm run build
+        
+      - name: List files
+        run: ls -R ./
       
       - name: Upload artifact
         uses: actions/upload-artifact@v3
@@ -43,9 +46,6 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: site
-
-      - name: List files
-        run: ls -R ./
 
       - name: Setup pages
         uses: actions/configure-pages@v3
