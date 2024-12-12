@@ -1,10 +1,11 @@
 import React from "react";
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
-import { it, describe, expect } from "vitest";
+import { render } from "@testing-library/react";
+import { it, describe } from "vitest";
 import App from "../App.jsx";
 
+// Tried first test so it works with github actions...
 describe("App component", () => {
-    it("should generate a booking number and calculate the total price", async () => {
+    it("just try render App component", async () => {
         render(<App />);
     });
 })
