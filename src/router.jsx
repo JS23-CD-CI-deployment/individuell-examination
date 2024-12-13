@@ -1,5 +1,5 @@
+import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
-
 import Booking from './views/Booking';
 import Confirmation from './views/Confirmation';
 
