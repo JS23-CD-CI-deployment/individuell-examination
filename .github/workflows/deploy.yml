@@ -1,10 +1,9 @@
-name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages - Strajk bowling
 
 on:
   push:
     branches:
       - main
-
 
 jobs:
     build-and-test:

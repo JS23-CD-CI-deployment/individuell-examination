@@ -1,4 +1,5 @@
 import "./Input.scss";
+import React from 'react';
 
 function Input({
   label,
@@ -6,19 +7,23 @@ function Input({
   customClass,
   name,
   handleChange,
-  defaultValue,
+  value,
   disabled,
   maxLength,
+  id,
 }) {
   return (
     <section className="input">
-      <label className="input__label">{label}</label>
+      <label htmlFor={id} className="input__label">
+        {label}
+      </label>
       <input
+        id={id}
         type={type}
         className={`input__field ${customClass ? customClass : ""}`}
         name={name}
         onChange={handleChange}
-        defaultValue={defaultValue ? defaultValue : ""}
+        defaultValue={value}
         maxLength={maxLength}
         disabled={disabled}
       />

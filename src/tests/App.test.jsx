@@ -9,6 +9,3 @@ describe("App component", () => {
         render(<App />);
     });
 })
-
-
-

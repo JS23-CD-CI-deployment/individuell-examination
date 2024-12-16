@@ -1,5 +1,5 @@
 import "./BookingInfo.scss";
-
+import React from 'react';
 import Input from "../Input/Input";
 
 function BookingInfo({ updateBookingDetails }) {
@@ -11,6 +11,7 @@ function BookingInfo({ updateBookingDetails }) {
       <form className="booking-info__details">
         <section className="booking-info__when">
           <Input
+            id="date"
             label="Date"
             type="date"
             customClass="booking-info__date"
@@ -18,6 +19,7 @@ function BookingInfo({ updateBookingDetails }) {
             handleChange={updateBookingDetails}
           />
           <Input
+            id="time"
             label="Time"
             type="time"
             name="time"
@@ -25,6 +27,7 @@ function BookingInfo({ updateBookingDetails }) {
           />
         </section>
         <Input
+          id="number"
           label="Number of awesome bowlers"
           type="number"
           customClass="booking-info__who"
@@ -33,6 +36,7 @@ function BookingInfo({ updateBookingDetails }) {
           maxLength={2}
         />
         <Input
+          id="number"
           label="Number of lanes"
           type="number"
           customClass="booking-info__lanes"
